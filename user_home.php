@@ -11,7 +11,7 @@
         <ul>
         <li><a href="preArrivalChecklist.php">Pre Arrival Checklist</a>&nbsp;&nbsp;</li>
             <li><a href="upcomingEvents.php">Upcoming Events</a>&nbsp;&nbsp;</li>
-            <li><a href="postArrivalChecklist.php">Post Arrival Checklist</a>&nbsp;&nbsp;</li>
+            
             <li><a href="addPickUpRequest.php">Airport Pickup</a>&nbsp;&nbsp;</li>
             <li><a href="availableAccomdation.php">Accommodation</a>&nbsp;&nbsp;</li>
             <li><a href="becomeVolunteer.php">Become Volunteer</a>&nbsp;&nbsp;</li>
@@ -56,7 +56,7 @@ else {
 </form>
 </body>
 <?php
-    $query = "SELECT * from `posts` WHERE posted_date >= DATE_SUB(NOW(), INTERVAL 6 MONTH) ORDER BY posted_date desc";
+    $query = "SELECT * from `posts` ";
         $result = mysqli_query($db_con, $query);
     while($row = mysqli_fetch_array($result))
     {
