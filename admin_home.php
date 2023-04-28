@@ -4,6 +4,18 @@
     <meta charset="utf-8"/>
     <title>Add Event</title>
     <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="main.css"/>
+    <header>
+    <div class="container">
+    <nav>
+        <ul>
+            <li><a href="volunteersList.php">Volunteers</a>&nbsp;&nbsp;</li>
+            <li><a href="logout.php">Logout</a>&nbsp;&nbsp;</li>
+        </ul>
+    </nav>
+        
+</div>
+</header>
 </head>
 <body>
 <?php

@@ -17,19 +17,23 @@
         $password = mysqli_real_escape_string($db_con, $password);
         $usertype = stripslashes($_REQUEST['usertype']);
         $usertype = mysqli_real_escape_string($db_con, $usertype);
-        $query    = "SELECT * FROM `users` WHERE username='$username'
-                     AND password='$password'";
-        $result = mysqli_query($db_con, $query);
-        $rows = mysqli_num_rows($result);   
+        $query1    = "SELECT * FROM `users` WHERE username='$username'
+                     AND password='$password' and volunteer='yes'";
+        $result1 = mysqli_query($db_con, $query1);
+        $rows1= mysqli_num_rows($result1);   
+        $query2    = "SELECT * FROM `users` WHERE username='$username'
+        AND password='$password'";
+        $result2 = mysqli_query($db_con, $query2);
+        $rows2= mysqli_num_rows($result2);
         if ($username=='Admin' and $password=='Admin' and $usertype=='Admin'){
             $_SESSION['username'] = $username;
             header("Location: admin_home.php");
         }
-        else if($username=='Volunteer' and $password=='Volunteer' and $usertype=='Volunteer'){
+        else if( $rows1==1 and $usertype=='Volunteer'){
             $_SESSION['username'] = $username;
             header("Location: volunteer_home.php");
         }
-        else if ($rows == 1 ) {
+        else if ($rows2 == 1 and $usertype="User") {
             $_SESSION['username'] = $username;
             header("Location: user_home.php");}
         else {
