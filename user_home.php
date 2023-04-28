@@ -9,12 +9,12 @@
   <div class="container">
     <nav>
         <ul>
-            <li><a>Pre Arrival Checklist</a>&nbsp;&nbsp;</li>
+        <li><a href="preArrivalChecklist.php">Pre Arrival Checklist</a>&nbsp;&nbsp;</li>
             <li><a href="upcomingEvents.php">Upcoming Events</a>&nbsp;&nbsp;</li>
-            <li><a>Post Arrival Checklist</a>&nbsp;&nbsp;</li>
+            <li><a href="postArrivalChecklist.php">Post Arrival Checklist</a>&nbsp;&nbsp;</li>
             <li><a href="addPickUpRequest.php">Airport Pickup</a>&nbsp;&nbsp;</li>
             <li><a href="availableAccomdation.php">Accommodation</a>&nbsp;&nbsp;</li>
-            <li><a>Become Volunteer</a>&nbsp;&nbsp;</li>
+            <li><a href="becomeVolunteer.php">Become Volunteer</a>&nbsp;&nbsp;</li>
             <li><a href="logout.php">Logout</a>&nbsp;&nbsp;</li>
         </ul>
     </nav>  
