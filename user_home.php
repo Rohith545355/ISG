@@ -11,13 +11,13 @@
         <ul>
         <li><a href="preArrivalChecklist.php">Pre Arrival Checklist</a>&nbsp;&nbsp;</li>
             <li><a href="upcomingEvents.php">Upcoming Events</a>&nbsp;&nbsp;</li>
-            
+            <li><a href="postArrivalChecklist.php">Post Arrival Checklist</a>&nbsp;&nbsp;</li>
             <li><a href="addPickUpRequest.php">Airport Pickup</a>&nbsp;&nbsp;</li>
-            <li><a href="availableAccomdation.php">Accommodation</a>&nbsp;&nbsp;</li>
+            <li><a href="availableAccomdation.php">Accomdation</a>&nbsp;&nbsp;</li>
             <li><a href="becomeVolunteer.php">Become Volunteer</a>&nbsp;&nbsp;</li>
             <li><a href="logout.php">Logout</a>&nbsp;&nbsp;</li>
         </ul>
-    </nav>  
+    </nav>
         
 </div>
 </header>
@@ -31,8 +31,8 @@ if(isset($_POST['Post'])){
     $post = mysqli_real_escape_string($db_con, $post);
     $date = date('Y-M-d H:i');
     $username = $_SESSION['username'];
-    $query = "INSERT into `posts`(username, post)
-            VALUES ('$username','$post')";
+    $query = "INSERT into `posts`(username, post, posted_date)
+            VALUES ('$username','$post', '$date')";
     $result =mysqli_query($db_con, $query);
     if ($result){
         echo "<h3> Posted successfully</h3><br/>
@@ -56,8 +56,8 @@ else {
 </form>
 </body>
 <?php
-    $query = "SELECT * from `posts` ";
-        $result = mysqli_query($db_con, $query);
+    $query = "SELECT * from `posts`";
+    $result = mysqli_query($db_con, $query);
     while($row = mysqli_fetch_array($result))
     {
         echo "<p>".$row['username']."----".$row['post']."----".$row['posted_date']."</p>";
